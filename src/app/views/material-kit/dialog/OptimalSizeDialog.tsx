@@ -32,7 +32,7 @@ const DialogRoot = styled('div')(({ theme }) => ({
 export default function MaxWidthDialog() {
   const [open, setOpen] = React.useState(false);
   const [fullWidth, setFullWidth] = React.useState(true);
-  const [maxWidth, setMaxWidth] = React.useState('sm');
+  const [maxWidth, setMaxWidth]: any = React.useState('sm');
 
   function handleClickOpen() {
     setOpen(true);
@@ -40,10 +40,10 @@ export default function MaxWidthDialog() {
   function handleClose() {
     setOpen(false);
   }
-  function handleMaxWidthChange(event) {
+  function handleMaxWidthChange(event: any) {
     setMaxWidth(event.target.value);
   }
-  function handleFullWidthChange(event) {
+  function handleFullWidthChange(event: any) {
     setFullWidth(event.target.checked);
   }
 
@@ -75,7 +75,6 @@ export default function MaxWidthDialog() {
                 onChange={handleMaxWidthChange}
                 inputProps={{ name: 'max-width', id: 'max-width' }}
               >
-                <MenuItem value={false}>false</MenuItem>
                 <MenuItem value="xs">xs</MenuItem>
                 <MenuItem value="sm">sm</MenuItem>
                 <MenuItem value="md">md</MenuItem>

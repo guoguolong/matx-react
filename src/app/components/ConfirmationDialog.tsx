@@ -46,13 +46,13 @@ const StyledButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const ConfirmationDialog = ({
+const ConfirmationDialog: any = ({
   open,
   onConfirmDialogClose,
   text,
   title = 'confirm',
   onYesClick,
-}) => {
+}: any) => {
   return (
     <Dialog maxWidth="xs" open={open} onClose={onConfirmDialogClose}>
       <DialogBox>

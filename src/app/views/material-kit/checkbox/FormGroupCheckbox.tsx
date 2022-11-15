@@ -21,7 +21,7 @@ export default function FormGroupCheckbox() {
     antoine: false,
   });
 
-  const handleChange = (name) => (event) => {
+  const handleChange = (name: any) => (event: any) => {
     setState({ ...state, [name]: event.target.checked });
   };
 

@@ -1,6 +1,6 @@
 import useSettings from '@/app/hooks/useSettings';
 
-const MatxLogo = ({ className }) => {
+const MatxLogo = ({ className }: any) => {
   const { settings } = useSettings();
   const theme = settings.themes[settings.activeTheme];
 

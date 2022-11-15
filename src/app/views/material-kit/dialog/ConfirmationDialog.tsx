@@ -30,10 +30,10 @@ const options = [
   'Umbriel',
 ];
 
-function ConfirmationDialogRaw(props) {
+function ConfirmationDialogRaw(props: any) {
   const { onClose, value: valueProp, open, ...other } = props;
   const [value, setValue] = useState(valueProp);
-  const radioGroupRef = useRef(null);
+  const radioGroupRef: any = useRef(null);
 
   useEffect(() => {
     if (!open) {
@@ -50,7 +50,7 @@ function ConfirmationDialogRaw(props) {
   const handleCancel = () => onClose();
   const handleOk = () => onClose(value);
 
-  const handleChange = (_, newValue) => setValue(newValue);
+  const handleChange = (_: any, newValue: any) => setValue(newValue);
 
   return (
     <Dialog
@@ -108,7 +108,7 @@ export default function ConfirmationDialog() {
     setOpen(true);
   }
 
-  function handleClose(newValue) {
+  function handleClose(newValue: any) {
     setOpen(false);
 
     if (newValue) {
@@ -139,11 +139,11 @@ export default function ConfirmationDialog() {
         </ListItem>
 
         <ConfirmationDialogRaw
-          keepMounted
+          // keepMounted
           open={open}
           value={value}
-          className="paper"
-          id="ringtone-menu"
+          // className="paper"
+          // id="ringtone-menu"
           onClose={handleClose}
         />
       </List>

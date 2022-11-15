@@ -23,5 +23,21 @@
 - Add TypeScript Support
   - Add tsconfig.json - define alias `@`;
   - Replace `app/` with `@/app/`;
+- comments `textTransformStyle`
+- replace `shortid` with `nanoid`
+- upgrade `axios` to 1.x
+
+## unsupported properties of MUI
+
+- Box.sx
+- TextField.rowsMax
+- Menu.getContentAnchorEl
+- Drawer.width
+- Autocomplete.disableOpenOnFocus
+- Snackbar.onExited
+- Slider.ValueLabelComponent
+- Grid.justify
+- ConfirmationDialogRaw.keepMounted
+- ConfirmationDialogRaw.className
 
 `2022/11/15 By Allen Guo`

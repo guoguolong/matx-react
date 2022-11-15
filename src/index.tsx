@@ -5,8 +5,10 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import './globalData';
 import App from './app/App';
+// @ts-ignore
 import * as serviceWorker from './serviceWorker';
 
+// @ts-ignore
 ReactDOM.createRoot(document.getElementById('root')).render(
   <StyledEngineProvider injectFirst>
     <BrowserRouter>

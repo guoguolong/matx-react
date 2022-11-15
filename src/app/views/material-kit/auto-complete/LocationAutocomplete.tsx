@@ -1,11 +1,12 @@
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { Autocomplete, Grid, TextField, Typography } from '@mui/material';
 import { useTheme } from '@mui/system';
+// @ts-ignore
 import parse from 'autosuggest-highlight/parse';
 import throttle from 'lodash/throttle';
 import React from 'react';
 
-function loadScript(src, position, id) {
+function loadScript(src: any, position: any, id: any) {
   if (!position) {
     return;
   }
@@ -16,7 +17,7 @@ function loadScript(src, position, id) {
   script.src = src;
   position.appendChild(script);
 }
-const autocompleteService = { current: null };
+const autocompleteService: any = { current: null };
 
 export default function LocationAutocomplete() {
   const theme = useTheme();
@@ -36,7 +37,7 @@ export default function LocationAutocomplete() {
     loaded.current = true;
   }
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setInputValue(event.target.value);
   };
 
@@ -51,8 +52,8 @@ export default function LocationAutocomplete() {
   React.useEffect(() => {
     let active = true;
 
-    if (!autocompleteService.current && window.google) {
-      autocompleteService.current = new window.google.maps.places.AutocompleteService();
+    if (!autocompleteService.current && (window as any).google) {
+      autocompleteService.current = new (window as any).google.maps.places.AutocompleteService();
     }
     if (!autocompleteService.current) {
       return undefined;
@@ -63,7 +64,7 @@ export default function LocationAutocomplete() {
       return undefined;
     }
 
-    fetch({ input: inputValue }, (results) => {
+    fetch({ input: inputValue }, (results: any) => {
       if (active) {
         setOptions(results || []);
       }
@@ -78,13 +79,13 @@ export default function LocationAutocomplete() {
     <Autocomplete
       id="google-map-demo"
       style={{ width: 300 }}
-      getOptionLabel={(option) => (typeof option === 'string' ? option : option.description)}
+      getOptionLabel={(option: any) => (typeof option === 'string' ? option : option.description)}
       filterOptions={(x) => x}
       options={options}
       autoComplete
       includeInputInList
       freeSolo
-      disableOpenOnFocus
+      // disableOpenOnFocus
       renderInput={(params) => (
         <TextField
           {...params}
@@ -94,11 +95,11 @@ export default function LocationAutocomplete() {
           onChange={handleChange}
         />
       )}
-      renderOption={(option) => {
+      renderOption={(option: any) => {
         const matches = option.structured_formatting.main_text_matched_substrings;
         const parts = parse(
           option.structured_formatting.main_text,
-          matches.map((match) => [match.offset, match.offset + match.length])
+          matches.map((match: any) => [match.offset, match.offset + match.length])
         );
 
         return (
@@ -112,7 +113,7 @@ export default function LocationAutocomplete() {
               />
             </Grid>
             <Grid item xs>
-              {parts.map((part, index) => (
+              {parts.map((part: any, index: number) => (
                 <span
                   key={index}
                   style={{

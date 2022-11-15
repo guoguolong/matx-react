@@ -14,7 +14,7 @@ import { Navigate, useLocation } from 'react-router-dom';
 //   return authenticated;
 // };
 
-const AuthGuard = ({ children }) => {
+const AuthGuard = ({ children }: any) => {
   let {
     isAuthenticated,
     // user

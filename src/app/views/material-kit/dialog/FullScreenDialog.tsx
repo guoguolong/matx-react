@@ -15,6 +15,7 @@ import { H6 } from '@/app/components/Typography';
 import React from 'react';
 
 const Transition = React.forwardRef(function Transition(props, ref) {
+  // @ts-ignore
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
@@ -34,7 +35,7 @@ export default function FullScreenDialog() {
       <Button variant="outlined" color="primary" onClick={handleClickOpen}>
         Open full-screen dialog
       </Button>
-
+      {/* @ts-ignore */}
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar sx={{ position: 'relative' }}>
           <Toolbar>

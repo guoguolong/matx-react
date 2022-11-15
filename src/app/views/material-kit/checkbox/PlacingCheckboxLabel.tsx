@@ -8,13 +8,14 @@ import React from 'react';
 function PlacingCheckboxLabel() {
   const [value, setValue] = React.useState('female');
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     setValue(event.target.value);
   };
 
   return (
     <FormControl component="fieldset">
       <FormLabel component="legend">labelPlacement</FormLabel>
+      {/* @ts-ignore */}
       <FormGroup aria-label="position" name="position" value={value} onChange={handleChange} row>
         <FormControlLabel
           value="top"

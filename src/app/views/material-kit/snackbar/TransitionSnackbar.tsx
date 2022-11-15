@@ -1,11 +1,11 @@
-import { Button, Fade, Grow, Slide, Snackbar } from "@mui/material";
-import React from "react";
+import { Button, Fade, Grow, Slide, Snackbar } from '@mui/material';
+import React from 'react';
 
-function SlideTransition(props) {
+function SlideTransition(props: any) {
   return <Slide {...props} direction="up" />;
 }
 
-function GrowTransition(props) {
+function GrowTransition(props: any) {
   return <Grow {...props} />;
 }
 
@@ -15,7 +15,7 @@ export default function TransitionsSnackbar() {
     Transition: Fade,
   });
 
-  const handleClick = (Transition) => () => {
+  const handleClick = (Transition: any) => () => {
     setState({ open: true, Transition });
   };
 
@@ -32,7 +32,7 @@ export default function TransitionsSnackbar() {
         open={state.open}
         onClose={handleClose}
         TransitionComponent={state.Transition}
-        ContentProps={{ "aria-describedby": "message-id" }}
+        ContentProps={{ 'aria-describedby': 'message-id' }}
         message={<span id="message-id">I love snacks</span>}
       />
     </div>

@@ -24,6 +24,7 @@ const Separator = styled('h4')(({ theme }) => ({
   margin: 0,
   marginLeft: 8,
   paddingBottom: '3px',
+  // @ts-ignore
   color: theme.palette.text.hint,
 }));
 
@@ -33,8 +34,9 @@ const StyledIcon = styled(Icon)(() => ({
   verticalAlign: 'middle',
 }));
 
-const Breadcrumb = ({ routeSegments }) => {
+const Breadcrumb = ({ routeSegments }: any) => {
   const theme = useTheme();
+  // @ts-ignore
   const hint = theme.palette.text.hint;
 
   return (
@@ -55,7 +57,7 @@ const Breadcrumb = ({ routeSegments }) => {
         </NavLink>
 
         {routeSegments
-          ? routeSegments.map((route, index) => {
+          ? routeSegments.map((route: any, index: any) => {
               return index !== routeSegments.length - 1 ? (
                 <NavLink key={index} to={route.path}>
                   <SubName>{route.name}</SubName>

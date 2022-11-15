@@ -9,7 +9,7 @@ import Typography from '@mui/material/Typography';
 import { styled } from '@mui/system';
 import { useState } from 'react';
 
-const DialogTitleRoot = styled(MuiDialogTitle)(({ theme }) => ({
+const DialogTitleRoot: any = styled(MuiDialogTitle)(({ theme }) => ({
   margin: 0,
   padding: theme.spacing(2),
   '& .closeButton': {
@@ -20,7 +20,7 @@ const DialogTitleRoot = styled(MuiDialogTitle)(({ theme }) => ({
   },
 }));
 
-const DialogTitle = (props) => {
+const DialogTitle = (props: any) => {
   const { children, onClose } = props;
   return (
     <DialogTitleRoot disableTypography>

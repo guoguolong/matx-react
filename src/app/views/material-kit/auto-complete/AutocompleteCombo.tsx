@@ -47,9 +47,9 @@ const suggestions = [
 const filter = createFilterOptions();
 
 const AutocompleteCombo = () => {
-  const [value, setValue] = React.useState(null);
+  const [value, setValue]: any = React.useState(null);
 
-  const handleChange = (_, newValue) => {
+  const handleChange = (_: any, newValue: any) => {
     if (newValue && newValue.inputValue) {
       setValue({ label: newValue.inputValue });
       return;
@@ -57,7 +57,7 @@ const AutocompleteCombo = () => {
     setValue(newValue);
   };
 
-  const filterOptions = (options, params) => {
+  const filterOptions = (options: any, params: any) => {
     const filtered = filter(options, params);
     if (params.inputValue !== '') {
       filtered.push({ inputValue: params.inputValue, label: `Add "${params.inputValue}"` });
@@ -69,7 +69,7 @@ const AutocompleteCombo = () => {
     <Fragment>
       <AutoComplete
         options={suggestions}
-        getOptionLabel={(option) => option.label}
+        getOptionLabel={(option: any) => option.label}
         renderInput={(params) => (
           <TextField {...params} label="Combo box" variant="outlined" fullWidth />
         )}
@@ -80,7 +80,7 @@ const AutocompleteCombo = () => {
         options={suggestions}
         onChange={handleChange}
         filterOptions={filterOptions}
-        getOptionLabel={(option) => {
+        getOptionLabel={(option: any) => {
           // e.g value selected with enter, right from the input
           if (typeof option === 'string') {
             return option;
@@ -90,7 +90,7 @@ const AutocompleteCombo = () => {
           }
           return option.label;
         }}
-        renderOption={(option) => option.label}
+        renderOption={(option: any) => option.label}
         style={{ width: 300 }}
         freeSolo
         renderInput={(params) => (
@@ -100,7 +100,7 @@ const AutocompleteCombo = () => {
 
       <AutoComplete
         options={suggestions}
-        getOptionLabel={(option) => option.label}
+        getOptionLabel={(option: any) => option.label}
         getOptionDisabled={(option) => option === suggestions[0] || option === suggestions[2]}
         renderInput={(params) => (
           <TextField {...params} label="Disabled option" variant="outlined" fullWidth />

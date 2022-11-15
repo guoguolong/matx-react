@@ -11,13 +11,13 @@ const MenuButton = styled(Box)(({ theme }) => ({
   },
 }));
 
-const MatxMenu = (props) => {
+const MatxMenu = (props: any) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const children = React.Children.toArray(props.children);
   let { shouldCloseOnItemClick = true, horizontalPosition = 'left' } = props;
   const { settings } = useSettings();
 
-  const handleClick = (event) => {
+  const handleClick = (event: any) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -31,7 +31,7 @@ const MatxMenu = (props) => {
       <ThemeProvider theme={settings.themes[settings.activeTheme]}>
         <Menu
           elevation={8}
-          getContentAnchorEl={null}
+          // getContentAnchorEl={null}
           anchorEl={anchorEl}
           open={!!anchorEl}
           onClose={handleClose}

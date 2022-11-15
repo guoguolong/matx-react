@@ -90,12 +90,12 @@ const MatxCustomizer = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
   const [tabIndex, setTabIndex] = useState(0);
-  const { settings, updateSettings } = useSettings();
+  const { settings, updateSettings }: any = useSettings();
   const secondary = theme.palette.text.secondary;
 
   const tooglePanel = () => setOpen(!open);
 
-  const handleTabChange = (index) => setTabIndex(index);
+  const handleTabChange = (index: any) => setTabIndex(index);
 
   let activeTheme = { ...settings.themes[settings.activeTheme] };
 
@@ -153,7 +153,7 @@ const MatxCustomizer = () => {
                   <Box sx={{ color: secondary }}>Layouts</Box>
 
                   <Box display="flex" flexDirection="column">
-                    {demoLayouts.map((layout) => (
+                    {demoLayouts.map((layout: any) => (
                       <LayoutBox
                         key={layout.name}
                         color="secondary"

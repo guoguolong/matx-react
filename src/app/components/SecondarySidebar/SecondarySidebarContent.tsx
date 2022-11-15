@@ -5,7 +5,7 @@ import MatxCustomizer from '../MatxCustomizer/MatxCustomizer';
 import ShoppingCart from '../ShoppingCart';
 import { Span } from '../Typography';
 
-const SidebarRoot = styled('div')(({ theme, width }) => ({
+const SidebarRoot: any = styled('div')(({ theme, width }: any) => ({
   position: 'fixed',
   height: '100vh',
   width: width,
@@ -23,15 +23,15 @@ const SidebarRoot = styled('div')(({ theme, width }) => ({
   '@global': {
     '@media screen and (min-width: 767px)': {
       '.content-wrap, .layout2.layout-contained, .layout2.layout-full': {
-        marginRight: (props) => props.width,
+        marginRight: (props: any) => props.width,
       },
       '.matx-customizer': {
-        right: (props) => props.width,
+        right: (props: any) => props.width,
       },
     },
     '@media screen and (max-width: 959px)': {
       '.toolbar-menu-wrap .menu-area': {
-        width: (props) => `calc(100% - ${props.width})`,
+        width: (props: any) => `calc(100% - ${props.width})`,
       },
     },
   },

@@ -5,19 +5,22 @@ const StyledAvatar = styled(Avatar)(() => ({
   width: '40px',
 }));
 
-const StatusCircle = styled('div')(({ theme, status }) => ({
-  height: '14px',
-  width: '14px',
-  bottom: '0px',
-  right: '-3px',
-  borderRadius: '7px',
-  position: 'absolute',
-  border: '2px solid white',
-  background: status === 'online' ? theme.palette.primary.main : theme.palette.error.main,
-  color: status !== 'online' && 'white !important',
-}));
+const StatusCircle: any = styled('div')(
+  ({ theme, status }: any) =>
+    ({
+      height: '14px',
+      width: '14px',
+      bottom: '0px',
+      right: '-3px',
+      borderRadius: '7px',
+      position: 'absolute',
+      border: '2px solid white',
+      background: status === 'online' ? theme.palette.primary.main : theme.palette.error.main,
+      color: status !== 'online' && 'white !important',
+    } as any)
+);
 
-const ChatAvatar = ({ src, status }) => {
+const ChatAvatar = ({ src, status }: any) => {
   return (
     <Box position="relative">
       <StyledAvatar src={src} />

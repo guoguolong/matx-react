@@ -1,14 +1,14 @@
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { Box, styled } from "@mui/material";
-import Accordion from "@mui/material/Accordion";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import Typography from "@mui/material/Typography";
-import { useState } from "react";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { Box, styled } from '@mui/material';
+import Accordion from '@mui/material/Accordion';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import Typography from '@mui/material/Typography';
+import { useState } from 'react';
 
 const Heading = styled(Typography)(({ theme }) => ({
   fontSize: theme.typography.pxToRem(15),
-  flexBasis: "33.33%",
+  flexBasis: '33.33%',
   flexShrink: 0,
 }));
 
@@ -18,15 +18,15 @@ const SecondaryHeading = styled(Typography)(({ theme }) => ({
 }));
 
 export default function ControlledExpansionPanels() {
-  const [expanded, setExpanded] = useState(false);
+  const [expanded, setExpanded]: any = useState(false);
 
-  const handleChange = (panel) => (_, isExpanded) => {
+  const handleChange = (panel: any) => (_: any, isExpanded: any) => {
     setExpanded(isExpanded ? panel : false);
   };
 
   return (
     <Box width="100%">
-      <Accordion expanded={expanded === "panel1"} onChange={handleChange("panel1")}>
+      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary
           id="panel1bh-header"
           expandIcon={<ExpandMoreIcon />}
@@ -44,7 +44,7 @@ export default function ControlledExpansionPanels() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === "panel2"} onChange={handleChange("panel2")}>
+      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel2bh-content"
@@ -62,7 +62,7 @@ export default function ControlledExpansionPanels() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === "panel3"} onChange={handleChange("panel3")}>
+      <Accordion expanded={expanded === 'panel3'} onChange={handleChange('panel3')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel3bh-content"
@@ -82,7 +82,7 @@ export default function ControlledExpansionPanels() {
         </AccordionDetails>
       </Accordion>
 
-      <Accordion expanded={expanded === "panel4"} onChange={handleChange("panel4")}>
+      <Accordion expanded={expanded === 'panel4'} onChange={handleChange('panel4')}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
           aria-controls="panel4bh-content"

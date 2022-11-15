@@ -77,13 +77,13 @@ const ProductDetails = styled('div')(() => ({
 
 let cartListLoaded = false;
 
-function ShoppingCart({ container }) {
+function ShoppingCart({ container }: any) {
   const [totalCost, setTotalCost] = useState(0);
   const [panelOpen, setPanelOpen] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user } = useAuth();
-  const { cartList } = useSelector((state) => state.ecommerce);
+  const { user }: any = useAuth();
+  const { cartList } = useSelector((state: any) => state.ecommerce);
   const { settings } = useSettings();
   const theme = useTheme();
   const secondary = theme.palette.text.secondary;
@@ -107,7 +107,7 @@ function ShoppingCart({ container }) {
   useEffect(() => {
     let total = 0;
 
-    cartList.forEach((product) => {
+    cartList.forEach((product: any) => {
       total += product.price * product.amount;
     });
     setTotalCost(total);
@@ -142,7 +142,7 @@ function ShoppingCart({ container }) {
             </CartBox>
 
             <Box flexGrow={1} overflow="auto">
-              {cartList.map((product) => (
+              {cartList.map((product: any) => (
                 <ProductBox key={product.id}>
                   <Box mr="4px" display="flex" flexDirection="column">
                     <StyledIconButton
@@ -160,6 +160,7 @@ function ShoppingCart({ container }) {
                         dispatch(updateCartAmount(user.id, product.id, product.amount - 1))
                       }
                     >
+                      {/* @ts-ignore */}
                       <Icon id={!(product.amount - 1) && 'disable'}>keyboard_arrow_down</Icon>
                     </StyledIconButton>
                   </Box>

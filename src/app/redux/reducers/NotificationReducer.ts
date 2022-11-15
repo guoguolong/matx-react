@@ -5,9 +5,9 @@ import {
   GET_NOTIFICATION,
 } from '../actions/NotificationActions';
 
-const initialState = [];
+const initialState: any = [];
 
-const NotificationReducer = function (state = initialState, action) {
+const NotificationReducer = function (state = initialState, action: any) {
   switch (action.type) {
     case GET_NOTIFICATION: {
       return [...action.payload];

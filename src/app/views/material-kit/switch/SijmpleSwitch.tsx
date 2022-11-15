@@ -1,6 +1,6 @@
-import { Box } from "@mui/material";
-import Switch from "@mui/material/Switch";
-import React from "react";
+import { Box } from '@mui/material';
+import Switch from '@mui/material/Switch';
+import React from 'react';
 
 export default function SimpleSwitch() {
   const [state, setState] = React.useState({
@@ -8,7 +8,7 @@ export default function SimpleSwitch() {
     checkedB: true,
   });
 
-  const handleChange = (name) => (event) => {
+  const handleChange = (name: any) => (event: any) => {
     setState({ ...state, [name]: event.target.checked });
   };
 
@@ -17,25 +17,25 @@ export default function SimpleSwitch() {
       <Switch
         value="checkedA"
         checked={state.checkedA}
-        onChange={handleChange("checkedA")}
-        inputProps={{ "aria-label": "secondary checkbox" }}
+        onChange={handleChange('checkedA')}
+        inputProps={{ 'aria-label': 'secondary checkbox' }}
       />
       <Switch
         color="primary"
         value="checkedB"
         checked={state.checkedB}
-        onChange={handleChange("checkedB")}
-        inputProps={{ "aria-label": "primary checkbox" }}
+        onChange={handleChange('checkedB')}
+        inputProps={{ 'aria-label': 'primary checkbox' }}
       />
-      <Switch value="checkedC" inputProps={{ "aria-label": "primary checkbox" }} />
-      <Switch disabled value="checkedD" inputProps={{ "aria-label": "disabled checkbox" }} />
-      <Switch disabled checked value="checkedE" inputProps={{ "aria-label": "primary checkbox" }} />
+      <Switch value="checkedC" inputProps={{ 'aria-label': 'primary checkbox' }} />
+      <Switch disabled value="checkedD" inputProps={{ 'aria-label': 'disabled checkbox' }} />
+      <Switch disabled checked value="checkedE" inputProps={{ 'aria-label': 'primary checkbox' }} />
 
       <Switch
         defaultChecked
         value="checkedF"
         color="default"
-        inputProps={{ "aria-label": "checkbox with default color" }}
+        inputProps={{ 'aria-label': 'checkbox with default color' }}
       />
     </Box>
   );

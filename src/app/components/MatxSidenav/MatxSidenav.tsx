@@ -1,6 +1,6 @@
 import { Box, styled, useMediaQuery, useTheme } from '@mui/material';
 
-const SideNav = styled('div')(({ theme, width }) => ({
+const SideNav: any = styled('div')(({ theme, width }: any) => ({
   zIndex: 91,
   width: width,
   overflow: 'hidden',
@@ -23,7 +23,7 @@ const SideNavOverlay = styled('div')(() => ({
   background: 'rgba(0, 0, 0, 0.74)',
 }));
 
-const MatxSidenav = ({ sx, open, children, toggleSidenav, width = '220px' }) => {
+const MatxSidenav = ({ sx, open, children, toggleSidenav, width = '220px' }: any) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 

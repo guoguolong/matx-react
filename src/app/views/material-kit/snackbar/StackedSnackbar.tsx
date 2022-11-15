@@ -1,21 +1,21 @@
-import { Button } from "@mui/material";
-import { SnackbarProvider, useSnackbar } from "notistack";
-import React from "react";
+import { Button } from '@mui/material';
+import { SnackbarProvider, useSnackbar } from 'notistack';
+import React from 'react';
 
 function StackedSnackbar() {
   const { enqueueSnackbar } = useSnackbar();
 
-  const handleClick = () => enqueueSnackbar("I love snacks.");
+  const handleClick = () => enqueueSnackbar('I love snacks.');
 
-  const handleClickVariant = (variant) => () => {
+  const handleClickVariant = (variant: any) => () => {
     // variant could be success, error, warning, info, or default
-    enqueueSnackbar("This is a warning message!", { variant });
+    enqueueSnackbar('This is a warning message!', { variant });
   };
 
   return (
     <React.Fragment>
       <Button onClick={handleClick}>Show snackbar</Button>
-      <Button onClick={handleClickVariant("warning")}>Show warning snackbar</Button>
+      <Button onClick={handleClickVariant('warning')}>Show warning snackbar</Button>
     </React.Fragment>
   );
 }

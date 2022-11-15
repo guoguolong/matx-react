@@ -1,10 +1,10 @@
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material";
-import React from "react";
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from '@mui/material';
+import React from 'react';
 
 export default function PlacingRadioLabel() {
-  const [value, setValue] = React.useState("female");
+  const [value, setValue] = React.useState('female');
 
-  function handleChange(event) {
+  function handleChange(event: any) {
     setValue(event.target.value);
   }
 

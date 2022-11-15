@@ -52,9 +52,9 @@ const JwtLogin = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const { login } = useAuth();
+  const { login }: any = useAuth();
 
-  const handleFormSubmit = async (values) => {
+  const handleFormSubmit = async (values: any) => {
     setLoading(true);
     try {
       await login(values.email, values.password);

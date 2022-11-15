@@ -28,7 +28,7 @@ const option = {
   ],
 };
 
-const AreaChart = ({ height, color }) => {
+const AreaChart = ({ height, color }: any) => {
   return <ReactEcharts style={{ height: height }} option={{ ...option, color: [...color] }} />;
 };
 

@@ -16,13 +16,13 @@ import { useState } from 'react';
 
 const emails = ['username@gmail.com', 'user02@gmail.com'];
 
-function SimpleDialog(props) {
+function SimpleDialog(props: any) {
   const { onClose, selectedValue, ...other } = props;
 
   function handleClose() {
     onClose(selectedValue);
   }
-  function handleListItemClick(value) {
+  function handleListItemClick(value: any) {
     onClose(value);
   }
 
@@ -66,7 +66,7 @@ export default function SimpleDialogDemo() {
 
   const handleClickOpen = () => setOpen(true);
 
-  const handleClose = (value) => {
+  const handleClose = (value: any) => {
     setOpen(false);
     setSelectedValue(value);
   };

@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/system';
 import ReactEcharts from 'echarts-for-react';
 
-const DoughnutChart = ({ height, color = [] }) => {
+const DoughnutChart = ({ height, color = [] }: any) => {
   const theme = useTheme();
 
   const option = {

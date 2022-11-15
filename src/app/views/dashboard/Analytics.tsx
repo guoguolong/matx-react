@@ -46,6 +46,7 @@ const Analytics = () => {
             <StatCards2 />
 
             <H4>Ongoing Projects</H4>
+            {/* @ts-ignore */}
             <RowCards />
           </Grid>
 

@@ -34,7 +34,7 @@ const StyledScrollBar = styled(Scrollbar)(() => ({
   flexDirection: 'column',
 }));
 
-const LayoutContainer = styled(Box)(({ width, secondarySidebar }) => ({
+const LayoutContainer: any = styled(Box)(({ width, secondarySidebar }: any) => ({
   height: '100vh',
   display: 'flex',
   flexGrow: '1',
@@ -48,8 +48,8 @@ const LayoutContainer = styled(Box)(({ width, secondarySidebar }) => ({
 }));
 
 const Layout1 = () => {
-  const { settings, updateSettings } = useSettings();
-  const { layout1Settings, secondarySidebar } = settings;
+  const { settings, updateSettings }: any = useSettings();
+  const { layout1Settings, secondarySidebar }: any = settings;
   const topbarTheme = settings.themes[layout1Settings.topbar.theme];
   const {
     leftSidebar: { mode: sidenavMode, show: showSidenav },
@@ -96,7 +96,8 @@ const Layout1 = () => {
       <LayoutContainer width={sidenavWidth} secondarySidebar={secondarySidebar}>
         {layout1Settings.topbar.show && layout1Settings.topbar.fixed && (
           <ThemeProvider theme={topbarTheme}>
-            <Layout1Topbar fixed={true} className="elevation-z8" />
+            {/* @ts-ignore */}
+            <Layout1Topbar fixed className="elevation-z8" />
           </ThemeProvider>
         )}
 

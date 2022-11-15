@@ -6,7 +6,7 @@ import ComparisonChart from './ComparisonChart';
 import DoughnutChart from './Doughnut';
 import LineChart from './LineChart';
 
-const Container = styled('div')(({ theme }) => ({
+const Container = styled('div')(({ theme }: any) => ({
   margin: '30px',
   [theme.breakpoints.down('sm')]: {
     margin: '16px',

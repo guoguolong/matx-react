@@ -4,15 +4,15 @@ import RootReducer from './reducers/RootReducer';
 
 const initialState = {};
 const middlewares = [thunk];
-let devtools = (x) => x;
+let devtools: any = (x: any) => x;
 
 if (
   typeof process === 'object' &&
   process.env.NODE_ENV !== 'production' &&
-  process.browser &&
-  window.__REDUX_DEVTOOLS_EXTENSION__
+  (process as any).browser &&
+  (window as any).__REDUX_DEVTOOLS_EXTENSION__
 ) {
-  devtools = window.__REDUX_DEVTOOLS_EXTENSION__();
+  devtools = (window as any).__REDUX_DEVTOOLS_EXTENSION__();
 }
 
 export const Store = createStore(

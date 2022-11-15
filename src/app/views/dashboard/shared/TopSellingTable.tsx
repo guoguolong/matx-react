@@ -44,7 +44,7 @@ const ProductTable = styled(Table)(() => ({
   '& td:first-of-type': { paddingLeft: '16px !important' },
 }));
 
-const Small = styled('small')(({ bgcolor }) => ({
+const Small: any = styled('small')(({ bgcolor }: any) => ({
   width: 50,
   height: 15,
   color: '#fff',

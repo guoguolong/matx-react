@@ -1,21 +1,21 @@
-import { Box, Slider, styled, Typography } from "@mui/material";
+import { Box, Slider, styled, Typography } from '@mui/material';
 
-const SliderRoot = styled("div")(({ theme }) => ({
+const SliderRoot = styled('div')(({ theme }) => ({
   width: 300,
-  "& .margin": { height: theme.spacing(3) },
+  '& .margin': { height: theme.spacing(3) },
 }));
 
 const marks = [
-  { value: 0, label: "0°C" },
-  { value: 20, label: "20°C" },
-  { value: 37, label: "37°C" },
-  { value: 100, label: "100°C" },
+  { value: 0, label: '0°C' },
+  { value: 20, label: '20°C' },
+  { value: 37, label: '37°C' },
+  { value: 100, label: '100°C' },
 ];
 
-function valuetext(value) {
+function valuetext(value: any) {
   return `${value}°C`;
 }
-function valueLabelFormat(value) {
+function valueLabelFormat(value: any) {
   return marks.findIndex((mark) => mark.value === value) + 1;
 }
 

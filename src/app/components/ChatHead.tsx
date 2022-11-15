@@ -32,7 +32,7 @@ const Popup = styled('div')(({ theme }) => ({
   },
 }));
 
-const ChatHead = ({ icon, children }) => {
+const ChatHead = ({ icon, children }: any) => {
   const [open, setOpen] = useState(false);
 
   const togglePopup = async () => {

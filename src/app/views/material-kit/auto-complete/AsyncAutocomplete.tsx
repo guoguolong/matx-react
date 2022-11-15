@@ -11,7 +11,7 @@ function sleep(delay = 0) {
 
 export default function AsyncAutocomplete() {
   const [open, setOpen] = React.useState(false);
-  const [options, setOptions] = React.useState([]);
+  const [options, setOptions]: any = React.useState([]);
   const loading = open && options.length === 0;
 
   React.useEffect(() => {
@@ -27,7 +27,7 @@ export default function AsyncAutocomplete() {
       const countries = await response.json();
 
       if (active) {
-        setOptions(Object.keys(countries).map((key) => countries[key].item[0]));
+        setOptions(Object.keys(countries).map((key: any) => countries[key].item[0]));
       }
     })();
 
@@ -50,7 +50,7 @@ export default function AsyncAutocomplete() {
       id="asynchronous-demo"
       onOpen={() => setOpen(true)}
       onClose={() => setOpen(false)}
-      getOptionLabel={(option) => option.name}
+      getOptionLabel={(option: any) => option.name}
       renderInput={(params) => (
         <TextField
           {...params}

@@ -1,7 +1,7 @@
 export const SET_USER_NAVIGATION = 'SET_USER_NAVIGATION';
 
-const getfilteredNavigations = (navList = [], role) => {
-  return navList.reduce((array, nav) => {
+const getfilteredNavigations = (navList = [], role: any) => {
+  return navList.reduce((array: Array<any>, nav: any) => {
     if (nav.auth) {
       if (nav.auth.includes(role)) {
         array.push(nav);
@@ -19,7 +19,7 @@ const getfilteredNavigations = (navList = [], role) => {
 };
 
 export function getNavigationByUser() {
-  return (dispatch, getState) => {
+  return (dispatch: any, getState: any) => {
     let { user, navigations = [] } = getState();
 
     let filteredNavigations = getfilteredNavigations(navigations, user.role);

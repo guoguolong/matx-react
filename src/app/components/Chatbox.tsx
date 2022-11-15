@@ -76,21 +76,21 @@ const ChatImg = styled('img')(() => ({ width: '40px' }));
 const ChatImgSize = styled(MessageTime)(() => ({}));
 
 // for previewing bot message
-const globalMessageList = [];
+const globalMessageList: any = [];
 
-const Chatbox = ({ togglePopup }) => {
+const Chatbox = ({ togglePopup }: any) => {
   const [isAlive, setIsAlive] = useState(true);
   const [message, setMessage] = useState('');
-  const [messageList, setMessageList] = useState([]);
+  const [messageList, setMessageList]: any = useState([]);
   const currentUserId = '7863a6802ez0e277a0f98534';
   const chatBottomRef = document.querySelector('#chat-scroll');
 
-  const sendMessageOnEnter = (event) => {
+  const sendMessageOnEnter = (event: any) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       let tempMessage = message.trim();
       if (tempMessage !== '') {
         let tempList = [...messageList];
-        let messageObject = {
+        let messageObject: any = {
           text: tempMessage,
           contactId: currentUserId,
         };
@@ -106,7 +106,7 @@ const Chatbox = ({ togglePopup }) => {
   const dummyReply = async () => {
     setTimeout(() => {
       let tempList = [...messageList];
-      let messageObject = {
+      let messageObject: any = {
         text: 'Good to hear from you. enjoy!!!',
         contactId: 'opponents contact id',
         avatar: '/assets/images/faces/13.jpg',
@@ -246,14 +246,14 @@ const Chatbox = ({ togglePopup }) => {
         </IconButton>
       </ProfileBox>
       <StyledScrollBar id="chat-scroll">
-        {messageList.map((item, ind) => (
+        {messageList.map((item: any, ind: any) => (
           <Box
             key={ind}
             p="20px"
             display="flex"
-            sx={{
-              justifyContent: currentUserId === item.contactId && 'flex-end',
-            }}
+            // sx={{
+            //   justifyContent: currentUserId === item.contactId && 'flex-end',
+            // }}
           >
             {currentUserId !== item.contactId && <Avatar src={item.avatar} />}
             <Box ml="12px">
@@ -297,7 +297,7 @@ const Chatbox = ({ togglePopup }) => {
         <TextField
           placeholder="Type here ..."
           multiline
-          rowsMax={4}
+          // rowsMax={4}
           fullWidth
           sx={{ '& textarea': { color: primary } }}
           InputProps={{

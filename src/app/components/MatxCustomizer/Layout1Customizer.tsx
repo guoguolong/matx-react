@@ -35,7 +35,7 @@ const ToolbarContainer = styled('div')(() => ({
   flexWrap: 'wrap',
 }));
 
-const ToolbarContent = styled('div')(({ color }) => ({
+const ToolbarContent = styled('div')(({ color }: any) => ({
   width: 40,
   height: 40,
   margin: '8px',
@@ -45,7 +45,7 @@ const ToolbarContent = styled('div')(({ color }) => ({
   alignItems: 'center',
   justifyContent: 'center',
   boxShadow: themeShadows[3],
-  background: themeColors[color].palette.primary.main,
+  background: (themeColors as any)[color].palette.primary.main,
 }));
 
 const IMG = styled('img')(() => ({
@@ -54,7 +54,7 @@ const IMG = styled('img')(() => ({
   display: 'block',
 }));
 
-const Layout1Customizer = ({ settings, handleChange, handleControlChange }) => {
+const Layout1Customizer = ({ settings, handleChange, handleControlChange }: any) => {
   return (
     <Fragment>
       <Box mb="16px" mx="12px">

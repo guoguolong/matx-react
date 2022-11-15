@@ -23,10 +23,10 @@ const SideNavMobile = styled('div')(({ theme }) => ({
   [theme.breakpoints.up('lg')]: { display: 'none' },
 }));
 
-const Sidenav = ({ children }) => {
-  const { settings, updateSettings } = useSettings();
+const Sidenav = ({ children }: any) => {
+  const { settings, updateSettings }: any = useSettings();
 
-  const updateSidebarMode = (sidebarSettings) => {
+  const updateSidebarMode = (sidebarSettings: any) => {
     let activeLayoutSettingsName = settings.activeLayout + 'Settings';
     let activeLayoutSettings = settings[activeLayoutSettingsName];
 

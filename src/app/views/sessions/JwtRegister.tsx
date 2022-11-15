@@ -49,12 +49,12 @@ const validationSchema = Yup.object().shape({
 });
 
 const JwtRegister = () => {
-  const theme = useTheme();
-  const { register } = useAuth();
+  const theme: any = useTheme();
+  const { register }: any = useAuth();
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
 
-  const handleFormSubmit = (values) => {
+  const handleFormSubmit = (values: any) => {
     setLoading(true);
 
     try {

@@ -5,15 +5,18 @@ import { NavLink } from 'react-router-dom';
 import { Paragraph, Span } from '../Typography';
 import MatxVerticalNavExpansionPanel from './MatxVerticalNavExpansionPanel';
 
-const ListLabel = styled(Paragraph)(({ theme, mode }) => ({
-  fontSize: '12px',
-  marginTop: '20px',
-  marginLeft: '15px',
-  marginBottom: '10px',
-  textTransform: 'uppercase',
-  display: mode === 'compact' && 'none',
-  color: theme.palette.text.secondary,
-}));
+const ListLabel: any = styled(Paragraph)(
+  ({ theme, mode }: any) =>
+    ({
+      fontSize: '12px',
+      marginTop: '20px',
+      marginLeft: '15px',
+      marginBottom: '10px',
+      textTransform: 'uppercase',
+      display: mode === 'compact' && 'none',
+      color: theme.palette.text.secondary,
+    } as any)
+);
 
 const ExtAndIntCommon = {
   display: 'flex',
@@ -37,12 +40,15 @@ const ExtAndIntCommon = {
     verticalAlign: 'middle',
   },
 };
-const ExternalLink = styled('a')(({ theme }) => ({
-  ...ExtAndIntCommon,
-  color: theme.palette.text.primary,
-}));
+const ExternalLink: any = styled('a')(
+  ({ theme }: any) =>
+    ({
+      ...ExtAndIntCommon,
+      color: theme.palette.text.primary,
+    } as any)
+);
 
-const InternalLink = styled(Box)(({ theme }) => ({
+const InternalLink: any = styled(Box)(({ theme }) => ({
   '& a': {
     ...ExtAndIntCommon,
     color: theme.palette.text.primary,
@@ -52,13 +58,16 @@ const InternalLink = styled(Box)(({ theme }) => ({
   },
 }));
 
-const StyledText = styled(Span)(({ mode }) => ({
-  fontSize: '0.875rem',
-  paddingLeft: '0.8rem',
-  display: mode === 'compact' && 'none',
-}));
+const StyledText: any = styled(Span)(
+  ({ mode }: any) =>
+    ({
+      fontSize: '0.875rem',
+      paddingLeft: '0.8rem',
+      display: mode === 'compact' && 'none',
+    } as any)
+);
 
-const BulletIcon = styled('div')(({ theme }) => ({
+const BulletIcon: any = styled('div')(({ theme }) => ({
   padding: '2px',
   marginLeft: '24px',
   marginRight: '8px',
@@ -73,12 +82,12 @@ const BadgeValue = styled('div')(() => ({
   borderRadius: '300px',
 }));
 
-const MatxVerticalNav = ({ items }) => {
+const MatxVerticalNav = ({ items }: any) => {
   const { settings } = useSettings();
   const { mode } = settings.layout1Settings.leftSidebar;
 
-  const renderLevels = (data) => {
-    return data.map((item, index) => {
+  const renderLevels = (data: any) => {
+    return data.map((item: any, index: number) => {
       if (item.type === 'label')
         return (
           <ListLabel key={index} mode={mode} className="sidenavHoverShow">
@@ -141,11 +150,11 @@ const MatxVerticalNav = ({ items }) => {
                     />
                     <Box
                       className="nav-bullet-text"
-                      sx={{
-                        ml: '20px',
-                        fontSize: '11px',
-                        display: mode !== 'compact' && 'none',
-                      }}
+                      // sx={{
+                      //   ml: '20px',
+                      //   fontSize: '11px',
+                      //   display: mode !== 'compact' && 'none',
+                      // }}
                     >
                       {item.iconText}
                     </Box>

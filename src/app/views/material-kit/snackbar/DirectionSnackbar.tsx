@@ -1,19 +1,19 @@
-import { Box, Button, Slide, Snackbar } from "@mui/material";
-import { useState } from "react";
+import { Box, Button, Slide, Snackbar } from '@mui/material';
+import { useState } from 'react';
 
-function TransitionLeft(props) {
+function TransitionLeft(props: any) {
   return <Slide {...props} direction="left" />;
 }
 
-function TransitionUp(props) {
+function TransitionUp(props: any) {
   return <Slide {...props} direction="up" />;
 }
 
-function TransitionRight(props) {
+function TransitionRight(props: any) {
   return <Slide {...props} direction="right" />;
 }
 
-function TransitionDown(props) {
+function TransitionDown(props: any) {
   return <Slide {...props} direction="down" />;
 }
 
@@ -21,7 +21,7 @@ const DirectionSnackbar = () => {
   const [open, setOpen] = useState(false);
   const [TransitionType, setTransitionType] = useState(undefined);
 
-  const handleClick = (slideDirection) => () => {
+  const handleClick = (slideDirection: any) => () => {
     setOpen(true);
     setTransitionType(() => slideDirection);
   };
@@ -39,7 +39,7 @@ const DirectionSnackbar = () => {
         open={open}
         onClose={handleClose}
         TransitionComponent={TransitionType}
-        ContentProps={{ "aria-describedby": "message-id" }}
+        ContentProps={{ 'aria-describedby': 'message-id' }}
         message={<span id="message-id">I love snacks</span>}
       />
     </Box>

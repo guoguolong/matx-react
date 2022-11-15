@@ -1,13 +1,13 @@
 import { differenceInSeconds } from 'date-fns';
 
-export const convertHexToRGB = (hex) => {
+export const convertHexToRGB = (hex: any) => {
   // check if it's a rgba
   if (hex.match('rgba')) {
     let triplet = hex.slice(5).split(',').slice(0, -1).join(',');
     return triplet;
   }
 
-  let c;
+  let c: any;
   if (/^#([A-Fa-f0-9]{3}){1,2}$/.test(hex)) {
     c = hex.substring(1).split('');
     if (c.length === 3) {
@@ -19,9 +19,10 @@ export const convertHexToRGB = (hex) => {
   }
 };
 
-export function debounce(func, wait, immediate) {
-  var timeout;
+export function debounce(func: any, wait: number, immediate: boolean) {
+  var timeout: any;
   return function () {
+    // @ts-ignore
     var context = this,
       args = arguments;
     clearTimeout(timeout);
@@ -47,7 +48,7 @@ export function isMdScreen() {
   return false;
 }
 
-function currentYPosition(elm) {
+function currentYPosition(elm: any) {
   if (!window && !elm) {
     return;
   }
@@ -62,7 +63,7 @@ function currentYPosition(elm) {
   return 0;
 }
 
-function elmYPosition(elm) {
+function elmYPosition(elm: any) {
   var y = elm.offsetTop;
   var node = elm;
   while (node.offsetParent && node.offsetParent !== document.body) {
@@ -72,7 +73,7 @@ function elmYPosition(elm) {
   return y;
 }
 
-export function scrollTo(scrollableElement, elmID) {
+export function scrollTo(scrollableElement: any, elmID: any) {
   var elm = document.getElementById(elmID);
 
   if (!elmID || !elm) {
@@ -124,7 +125,7 @@ export function scrollTo(scrollableElement, elmID) {
   return false;
 }
 
-export function getTimeDifference(date) {
+export function getTimeDifference(date: any) {
   let difference = differenceInSeconds(new Date(), date);
 
   if (difference < 60) return `${Math.floor(difference)} sec`;
@@ -141,8 +142,8 @@ export function generateRandomId() {
   return uid;
 }
 
-export function getQueryParam(prop) {
-  var params = {};
+export function getQueryParam(prop: any) {
+  var params: any = {};
   var search = decodeURIComponent(
     window.location.href.slice(window.location.href.indexOf('?') + 1)
   );
@@ -154,16 +155,16 @@ export function getQueryParam(prop) {
   return prop && prop in params ? params[prop] : params;
 }
 
-export function classList(classes) {
+export function classList(classes: any) {
   return Object.entries(classes)
     .filter((entry) => entry[1])
     .map((entry) => entry[0])
     .join(' ');
 }
 
-export const flat = (array) => {
-  var result = [];
-  array.forEach(function (a) {
+export const flat = (array: any) => {
+  var result: any = [];
+  array.forEach(function (a: any) {
     result.push(a);
     if (Array.isArray(a.children)) {
       result = result.concat(flat(a.children));

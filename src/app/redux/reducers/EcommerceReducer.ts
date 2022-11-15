@@ -14,7 +14,7 @@ const initialState = {
   cartList: [],
 };
 
-const EcommerceReducer = function (state = initialState, action) {
+const EcommerceReducer = function (state = initialState, action: any) {
   switch (action.type) {
     case GET_PRODUCT_LIST: {
       return {

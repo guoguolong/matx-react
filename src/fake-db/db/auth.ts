@@ -1,3 +1,4 @@
+// @ts-ignore
 import jwt from 'jsonwebtoken';
 import Mock from '../mock';
 
@@ -21,7 +22,7 @@ const userList = [
 // IF YOU NEED HELP ABOUT SERVER SIDE IMPLEMENTATION
 // CONTACT US AT support@ui-lib.com
 
-Mock.onPost('/api/auth/login').reply(async (config) => {
+Mock.onPost('/api/auth/login').reply(async (config: any) => {
   try {
     await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -54,7 +55,7 @@ Mock.onPost('/api/auth/login').reply(async (config) => {
   }
 });
 
-Mock.onPost('/api/auth/register').reply((config) => {
+Mock.onPost('/api/auth/register').reply((config: any) => {
   try {
     const { email, username } = JSON.parse(config.data);
     const user = userList.find((u) => u.email === email);
@@ -97,7 +98,7 @@ Mock.onPost('/api/auth/register').reply((config) => {
   }
 });
 
-Mock.onGet('/api/auth/profile').reply((config) => {
+Mock.onGet('/api/auth/profile').reply((config: any) => {
   try {
     const { Authorization } = config.headers;
     if (!Authorization) {

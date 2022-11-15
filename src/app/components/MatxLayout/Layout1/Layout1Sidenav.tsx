@@ -8,7 +8,7 @@ import React from 'react';
 import Brand from '../../Brand';
 import Sidenav from '../../Sidenav';
 
-const SidebarNavRoot = styled(Box)(({ theme, width, primaryBg, bgImgURL }) => ({
+const SidebarNavRoot: any = styled(Box)(({ theme, width, primaryBg, bgImgURL }: any) => ({
   position: 'fixed',
   top: 0,
   left: 0,
@@ -49,7 +49,7 @@ const NavListBox = styled(Box)(() => ({
 
 const Layout1Sidenav = () => {
   const theme = useTheme();
-  const { settings, updateSettings } = useSettings();
+  const { settings, updateSettings }: any = useSettings();
   const leftSidebar = settings.layout1Settings.leftSidebar;
   const { mode, bgImgURL } = leftSidebar;
 
@@ -63,7 +63,7 @@ const Layout1Sidenav = () => {
   };
   const primaryRGB = convertHexToRGB(theme.palette.primary.main);
 
-  const updateSidebarMode = (sidebarSettings) => {
+  const updateSidebarMode = (sidebarSettings: any) => {
     updateSettings({
       layout1Settings: {
         leftSidebar: {

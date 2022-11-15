@@ -74,9 +74,9 @@ const BadgeValue = styled('div')(() => ({
   borderRadius: '300px',
 }));
 
-const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
+const MatxVerticalNavExpansionPanel = ({ item, children, mode }: any) => {
   const [collapsed, setCollapsed] = useState(true);
-  const elementRef = useRef(null);
+  const elementRef: any = useRef(null);
   const componentHeight = useRef(0);
   const { pathname } = useLocation();
   const { name, icon, iconText, badge } = item;
@@ -87,7 +87,7 @@ const MatxVerticalNavExpansionPanel = ({ item, children, mode }) => {
     setCollapsed(!collapsed);
   };
 
-  const calcaulateHeight = useCallback((node) => {
+  const calcaulateHeight = useCallback((node: any) => {
     if (node.name !== 'child') {
       for (let child of node.children) {
         calcaulateHeight(child);

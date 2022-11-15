@@ -6,7 +6,7 @@ const Container = styled('div')(() => ({
   position: 'relative',
 }));
 
-const MatxSidenavContainer = ({ children }) => {
+const MatxSidenavContainer = ({ children }: any) => {
   return <Container>{children}</Container>;
 };
 

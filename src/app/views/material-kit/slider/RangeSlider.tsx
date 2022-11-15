@@ -1,14 +1,14 @@
-import { Box, Slider, Typography } from "@mui/material";
-import React from "react";
+import { Box, Slider, Typography } from '@mui/material';
+import React from 'react';
 
-function valuetext(value) {
+function valuetext(value: any) {
   return `${value}°C`;
 }
 
 export default function RangeSlider() {
   const [value, setValue] = React.useState([20, 37]);
 
-  const handleChange = (_, newValue) => {
+  const handleChange = (_: any, newValue: any) => {
     setValue(newValue);
   };
 

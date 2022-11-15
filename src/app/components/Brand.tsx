@@ -16,7 +16,7 @@ const StyledSpan = styled(Span)(({ mode }) => ({
   display: mode === 'compact' ? 'none' : 'block',
 }));
 
-const Brand = ({ children }) => {
+const Brand = ({ children }: any) => {
   const { settings } = useSettings();
   const leftSidebar = settings.layout1Settings.leftSidebar;
   const { mode } = leftSidebar;

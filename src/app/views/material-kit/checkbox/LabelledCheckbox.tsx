@@ -24,7 +24,7 @@ export default function LabelledCheckbox() {
     checkedG: true,
   });
 
-  const handleChange = (name) => (event) => {
+  const handleChange = (name: any) => (event: any) => {
     setState({ ...state, [name]: event.target.checked });
   };
 

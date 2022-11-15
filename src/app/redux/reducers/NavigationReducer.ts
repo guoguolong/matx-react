@@ -3,7 +3,7 @@ import { SET_USER_NAVIGATION } from '../actions/NavigationAction';
 
 const initialState = [...navigations];
 
-const NavigationReducer = function (state = initialState, action) {
+const NavigationReducer = function (state = initialState, action: any) {
   switch (action.type) {
     case SET_USER_NAVIGATION: {
       return [...action.payload];

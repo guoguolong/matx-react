@@ -1,23 +1,23 @@
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormLabel from "@mui/material/FormLabel";
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import { styled } from "@mui/system";
-import React from "react";
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import { styled } from '@mui/system';
+import React from 'react';
 
-const RadioRoot = styled("div")(({ theme }) => ({
-  display: "flex",
-  "& .formControl": {
+const RadioRoot = styled('div')(({ theme }) => ({
+  display: 'flex',
+  '& .formControl': {
     marginRight: theme.spacing(3),
     marginLeft: theme.spacing(3),
   },
-  "& .group": { margin: theme.spacing(1, 0) },
+  '& .group': { margin: theme.spacing(1, 0) },
 }));
 
 export default function SimpleRadio() {
-  const [value, setValue] = React.useState("female");
-  function handleChange(event) {
+  const [value, setValue] = React.useState('female');
+  function handleChange(event: any) {
     setValue(event.target.value);
   }
 

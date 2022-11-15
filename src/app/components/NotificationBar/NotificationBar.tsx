@@ -3,7 +3,7 @@ import { Box, styled, useTheme } from '@mui/system';
 import useNotification from '@/app/hooks/useNotification';
 import useSettings from '@/app/hooks/useSettings';
 import { sideNavWidth, topBarHeight } from '@/app/utils/constant';
-import { getTimeDifference } from '@/app/utils/utils.js';
+import { getTimeDifference } from '@/app/utils/utils';
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { themeShadows } from '../MatxTheme/themeColors';
@@ -68,7 +68,7 @@ const Heading = styled('span')(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const NotificationBar = ({ container }) => {
+const NotificationBar = ({ container }: any) => {
   const { settings } = useSettings();
   const theme = useTheme();
   const secondary = theme.palette.text.secondary;
@@ -92,7 +92,7 @@ const NotificationBar = ({ container }) => {
 
       <ThemeProvider theme={settings.themes[settings.activeTheme]}>
         <Drawer
-          width={'100px'}
+          // width={'100px'}
           container={container}
           variant="temporary"
           anchor={'right'}
@@ -108,7 +108,7 @@ const NotificationBar = ({ container }) => {
               <h5>Notifications</h5>
             </Notification>
 
-            {notifications?.map((notification) => (
+            {notifications?.map((notification: any) => (
               <NotificationCard key={notification.id}>
                 <DeleteButton
                   size="small"

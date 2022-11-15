@@ -13,6 +13,7 @@ import {
 } from '@mui/material';
 import { Span } from '@/app/components/Typography';
 import { useEffect, useState } from 'react';
+// @ts-ignore
 import { TextValidator, ValidatorForm } from 'react-material-ui-form-validator';
 
 const TextField = styled(TextValidator)(() => ({
@@ -21,10 +22,10 @@ const TextField = styled(TextValidator)(() => ({
 }));
 
 const SimpleForm = () => {
-  const [state, setState] = useState({ date: new Date() });
+  const [state, setState]: any = useState({ date: new Date() });
 
   useEffect(() => {
-    ValidatorForm.addValidationRule('isPasswordMatch', (value) => {
+    ValidatorForm.addValidationRule('isPasswordMatch', (value: any) => {
       if (value !== state.password) return false;
 
       return true;
@@ -32,17 +33,17 @@ const SimpleForm = () => {
     return () => ValidatorForm.removeValidationRule('isPasswordMatch');
   }, [state.password]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: any) => {
     // console.log("submitted");
     // console.log(event);
   };
 
-  const handleChange = (event) => {
+  const handleChange = (event: any) => {
     event.persist();
     setState({ ...state, [event.target.name]: event.target.value });
   };
 
-  const handleDateChange = (date) => setState({ ...state, date });
+  const handleDateChange = (date: any) => setState({ ...state, date });
 
   const {
     username,
@@ -96,7 +97,7 @@ const SimpleForm = () => {
               <DatePicker
                 value={date}
                 onChange={handleDateChange}
-                renderInput={(props) => (
+                renderInput={(props: any) => (
                   <TextField
                     {...props}
                     label="Date picker"

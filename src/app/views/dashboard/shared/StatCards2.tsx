@@ -12,7 +12,7 @@ const FabIcon = styled(Fab)(() => ({
   boxShadow: 'none !important',
 }));
 
-const H3 = styled('h3')(({ textcolor }) => ({
+const H3: any = styled('h3')(({ textcolor }: any) => ({
   margin: 0,
   color: textcolor,
   fontWeight: '500',
@@ -25,7 +25,7 @@ const H1 = styled('h1')(({ theme }) => ({
   color: theme.palette.text.secondary,
 }));
 
-const Span = styled('span')(({ textcolor }) => ({
+const Span: any = styled('span')(({ textcolor }: any) => ({
   fontSize: '13px',
   color: textcolor,
   marginLeft: '4px',

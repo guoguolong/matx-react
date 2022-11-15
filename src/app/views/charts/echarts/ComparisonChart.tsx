@@ -1,7 +1,7 @@
 import { useTheme } from '@mui/system';
 import ReactEcharts from 'echarts-for-react';
 
-const ComparisonChart = ({ height, color = [] }) => {
+const ComparisonChart = ({ height, color = [] }: any) => {
   const theme = useTheme();
 
   const option = {

@@ -7,7 +7,8 @@ import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import React from 'react';
 
-const Transition = React.forwardRef(function Transition(props, ref) {
+const Transition: any = React.forwardRef(function Transition(props, ref) {
+  // @ts-ignore
   return <Slide direction="up" ref={ref} {...props} />;
 });
 

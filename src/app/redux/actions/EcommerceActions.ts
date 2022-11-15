@@ -11,7 +11,7 @@ export const DELETE_PRODUCT_FROM_CART = 'DELETE_PRODUCT_FROM_CART';
 
 export const UPDATE_CART_AMOUNT = 'UPDATE_CART_AMOUNT';
 
-export const getProductList = () => (dispatch) => {
+export const getProductList: any = () => (dispatch: any) => {
   axios.get('/api/ecommerce/get-product-list').then((res) => {
     dispatch({
       type: GET_PRODUCT_LIST,
@@ -20,7 +20,7 @@ export const getProductList = () => (dispatch) => {
   });
 };
 
-export const getCategoryList = () => (dispatch) => {
+export const getCategoryList: any = () => (dispatch: any) => {
   axios.get('/api/ecommerce/get-category-list').then((res) => {
     dispatch({
       type: GET_CATEGORY_LIST,
@@ -29,7 +29,7 @@ export const getCategoryList = () => (dispatch) => {
   });
 };
 
-export const getRatingList = () => (dispatch) => {
+export const getRatingList: any = () => (dispatch: any) => {
   axios.get('/api/ecommerce/get-rating-list').then((res) => {
     dispatch({
       type: GET_RATING_LIST,
@@ -38,7 +38,7 @@ export const getRatingList = () => (dispatch) => {
   });
 };
 
-export const getBrandList = () => (dispatch) => {
+export const getBrandList: any = () => (dispatch: any) => {
   axios.get('/api/ecommerce/get-brand-list').then((res) => {
     dispatch({
       type: GET_BRAND_LIST,
@@ -47,7 +47,7 @@ export const getBrandList = () => (dispatch) => {
   });
 };
 
-export const getCartList = (uid) => (dispatch) => {
+export const getCartList: any = (uid: any) => (dispatch: any) => {
   axios.get('/api/ecommerce/get-cart-list', { data: uid }).then((res) => {
     dispatch({
       type: GET_CART_LIST,
@@ -56,7 +56,7 @@ export const getCartList = (uid) => (dispatch) => {
   });
 };
 
-export const addProductToCart = (uid, productId) => (dispatch) => {
+export const addProductToCart: any = (uid: any, productId: any) => (dispatch: any) => {
   axios.post('/api/ecommerce/add-to-cart', { uid, productId }).then((res) => {
     console.log(res.data);
     dispatch({
@@ -66,7 +66,7 @@ export const addProductToCart = (uid, productId) => (dispatch) => {
   });
 };
 
-export const deleteProductFromCart = (uid, productId) => (dispatch) => {
+export const deleteProductFromCart: any = (uid: any, productId: any) => (dispatch: any) => {
   axios.post('/api/ecommerce/delete-from-cart', { uid, productId }).then((res) => {
     dispatch({
       type: DELETE_PRODUCT_FROM_CART,
@@ -75,7 +75,7 @@ export const deleteProductFromCart = (uid, productId) => (dispatch) => {
   });
 };
 
-export const updateCartAmount = (uid, productId, amount) => (dispatch) => {
+export const updateCartAmount: any = (uid: any, productId: any, amount: any) => (dispatch: any) => {
   console.log(uid, productId, amount);
   axios.post('/api/ecommerce/update-cart-amount', { uid, productId, amount }).then((res) => {
     dispatch({

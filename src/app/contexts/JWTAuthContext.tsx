@@ -9,17 +9,17 @@ const initialState = {
   user: null,
 };
 
-const isValidToken = (accessToken) => {
+const isValidToken = (accessToken: any) => {
   if (!accessToken) {
     return false;
   }
 
-  const decodedToken = jwtDecode(accessToken);
+  const decodedToken: any = jwtDecode(accessToken);
   const currentTime = Date.now() / 1000;
   return decodedToken.exp > currentTime;
 };
 
-const setSession = (accessToken) => {
+const setSession = (accessToken: any) => {
   if (accessToken) {
     localStorage.setItem('accessToken', accessToken);
     axios.defaults.headers.common.Authorization = `Bearer ${accessToken}`;
@@ -29,7 +29,7 @@ const setSession = (accessToken) => {
   }
 };
 
-const reducer = (state, action) => {
+const reducer = (state: any, action: any) => {
   switch (action.type) {
     case 'INIT': {
       const { isAuthenticated, user } = action.payload;
@@ -80,10 +80,10 @@ const AuthContext = createContext({
   register: () => Promise.resolve(),
 });
 
-export const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }: any) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const login = async (email, password) => {
+  const login = async (email: any, password: any) => {
     const response = await axios.post('/api/auth/login', {
       email,
       password,
@@ -100,7 +100,7 @@ export const AuthProvider = ({ children }) => {
     });
   };
 
-  const register = async (email, username, password) => {
+  const register = async (email: any, username: any, password: any) => {
     const response = await axios.post('/api/auth/register', {
       email,
       username,
