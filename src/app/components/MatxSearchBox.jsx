@@ -1,6 +1,6 @@
 import { Icon, IconButton } from '@mui/material';
 import { styled, useTheme } from '@mui/system';
-import { topBarHeight } from 'app/utils/constant';
+import { topBarHeight } from '@/app/utils/constant';
 import React, { useState } from 'react';
 
 const SearchContainer = styled('div')(({ theme }) => ({

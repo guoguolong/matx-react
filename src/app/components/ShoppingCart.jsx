@@ -1,13 +1,13 @@
 import { Badge, Button, Drawer, Icon, IconButton, ThemeProvider } from '@mui/material';
 import { Box, styled, useTheme } from '@mui/system';
-import useAuth from 'app/hooks/useAuth';
-import useSettings from 'app/hooks/useSettings';
+import useAuth from '@/app/hooks/useAuth';
+import useSettings from '@/app/hooks/useSettings';
 import {
   deleteProductFromCart,
   getCartList,
   updateCartAmount,
-} from 'app/redux/actions/EcommerceActions';
-import { sideNavWidth, topBarHeight } from 'app/utils/constant';
+} from '@/app/redux/actions/EcommerceActions';
+import { sideNavWidth, topBarHeight } from '@/app/utils/constant';
 import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';

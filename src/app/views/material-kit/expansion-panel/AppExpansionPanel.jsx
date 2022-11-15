@@ -1,16 +1,16 @@
-import { Box, Stack, styled } from "@mui/material";
-import { Breadcrumb, SimpleCard } from "app/components";
-import ControlledExpansionPanels from "./ControlledAccordion";
-import CustomizedExpansionPanels from "./CustomizedExpansionPanel";
-import DetailedExpansionPanel from "./DetailedExpansionPanel";
-import SimpleExpansionPanel from "./SimpleExpansionPanel";
+import { Box, Stack, styled } from '@mui/material';
+import { Breadcrumb, SimpleCard } from '@/app/components';
+import ControlledExpansionPanels from './ControlledAccordion';
+import CustomizedExpansionPanels from './CustomizedExpansionPanel';
+import DetailedExpansionPanel from './DetailedExpansionPanel';
+import SimpleExpansionPanel from './SimpleExpansionPanel';
 
-const Container = styled("div")(({ theme }) => ({
-  margin: "30px",
-  [theme.breakpoints.down("sm")]: { margin: "16px" },
-  "& .breadcrumb": {
-    marginBottom: "30px",
-    [theme.breakpoints.down("sm")]: { marginBottom: "16px" },
+const Container = styled('div')(({ theme }) => ({
+  margin: '30px',
+  [theme.breakpoints.down('sm')]: { margin: '16px' },
+  '& .breadcrumb': {
+    marginBottom: '30px',
+    [theme.breakpoints.down('sm')]: { marginBottom: '16px' },
   },
 }));
 
@@ -19,7 +19,7 @@ const AppExpansionPanel = () => {
     <Container>
       <Box className="breadcrumb">
         <Breadcrumb
-          routeSegments={[{ name: "Material", path: "/material" }, { name: "Expansion Panel" }]}
+          routeSegments={[{ name: 'Material', path: '/material' }, { name: 'Expansion Panel' }]}
         />
       </Box>
 

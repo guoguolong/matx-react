@@ -1,6 +1,6 @@
 import { Icon, IconButton } from '@mui/material';
 import { styled, useTheme } from '@mui/system';
-import { Chatbox, ChatHead } from 'app/components';
+import { Chatbox, ChatHead } from '@/app/components';
 import MatxCustomizer from '../MatxCustomizer/MatxCustomizer';
 import ShoppingCart from '../ShoppingCart';
 import { Span } from '../Typography';

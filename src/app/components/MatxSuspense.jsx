@@ -1,4 +1,4 @@
-import { MatxLoading } from 'app/components';
+import { MatxLoading } from '@/app/components';
 import { Suspense } from 'react';
 
 const MatxSuspense = ({ children }) => {

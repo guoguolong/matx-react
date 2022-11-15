@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { topBarHeight } from 'app/utils/constant';
+import { topBarHeight } from '@/app/utils/constant';
 import clsx from 'clsx';
 import { cloneElement, useState } from 'react';
 
