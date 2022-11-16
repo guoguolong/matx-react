@@ -14,11 +14,12 @@
 
   - webpack 5 removed won't include polyfill for `node.js`. But `jsonwebtoken` depend on some of them. So add `alias`, `fallback` to webpack configuration(See [config-overrides.js](config-overrides.js)).
 
-  - Some packages in node_modules (still be `jsonwebtoken`) may use `process` without `require`. So the prevous rule won't work. You need clearly define global variable named `process` to fix it(See  
+  - Certain packages in node_modules (still be `jsonwebtoken`) may use `process` without `require`. So the prevous rule won't work. You need clearly define global variable named `process` to fix it(See  
     [src/globalData.js](src/globalData.js)).
 
 - `process` in source code.
-  Change `process` check wot `typeof process === 'string'`
+  - Change `process` check wot `typeof process === 'string'`
+  - Add global variable name `process`
 - Change `const axios = require('axios');` to `import axios from 'axios';`
 - Add TypeScript Support
   - Add tsconfig.json - define alias `@`;
