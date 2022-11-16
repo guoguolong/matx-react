@@ -1,43 +1,15 @@
 <h1>Forked from <a href="https://github.com/uilibrary/matx-react">uilibrary/matx-react</a></h1>
 
-## Improvment
+## Improvment - Compared with `main` branch
 
-- Add TypeScript support(On going)
-- Replace redux with recoil (On going)
-- Upgrade to webpack 5
-- Upgarde to react 18
-- Replace react-scripts with react-app-rewired
+- Based on vitejs to build.
 
 ## Upgrading log
 
-- Problmes while upgarding to webpack 5
+- How to tream `process`
 
-  - webpack 5 removed won't include polyfill for `node.js`. But `jsonwebtoken` depend on some of them. So add `alias`, `fallback` to webpack configuration(See [config-overrides.js](config-overrides.js)).
+  As we know that certain packages is using `process` without `require('process')`. You have to define the global variale `process` in your codes. 
 
-  - Some packages in node_modules (still be `jsonwebtoken`) may use `process` without `require`. So the prevous rule won't work. You need clearly define global variable named `process` to fix it(See  
-    [src/globalData.js](src/globalData.js)).
+  It only work on dev mode if you defined it in `vite.config.js`
 
-- `process` in source code.
-  Change `process` check wot `typeof process === 'string'`
-- Change `const axios = require('axios');` to `import axios from 'axios';`
-- Add TypeScript Support
-  - Add tsconfig.json - define alias `@`;
-  - Replace `app/` with `@/app/`;
-- comments `textTransformStyle`
-- replace `shortid` with `nanoid`
-- upgrade `axios` to 1.x
-
-## unsupported properties of MUI
-
-- Box.sx
-- TextField.rowsMax
-- Menu.getContentAnchorEl
-- Drawer.width
-- Autocomplete.disableOpenOnFocus
-- Snackbar.onExited
-- Slider.ValueLabelComponent
-- Grid.justify
-- ConfirmationDialogRaw.keepMounted
-- ConfirmationDialogRaw.className
-
-`2022/11/15 By Allen Guo`
+`2022/11/16 By Allen Guo`

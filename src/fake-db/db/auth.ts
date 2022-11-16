@@ -106,7 +106,7 @@ Mock.onGet('/api/auth/profile').reply((config: any) => {
     }
 
     const accessToken = Authorization.split(' ')[1];
-    const { userId } = jwt.verify(accessToken, JWT_SECRET);
+    const { userId }: any = jwt.verify(accessToken, JWT_SECRET);
     const user = userList.find((u) => u.id === userId);
 
     if (!user) {
