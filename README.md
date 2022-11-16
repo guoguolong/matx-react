@@ -2,7 +2,7 @@
 
 ## Improvment
 
-- Add TypeScript support(On going)
+- Add TypeScript support
 - Replace redux with recoil (On going)
 - Upgrade to webpack 5
 - Upgarde to react 18
