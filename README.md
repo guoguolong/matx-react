@@ -11,7 +11,7 @@
 
 ## Upgrading log
 
-- Problmes while upgarding to webpack 5
+- Problems while upgrading to webpack 5
 
   - webpack 5 removed won't include polyfill for `node.js`. But `jsonwebtoken` depend on some of them. So add `alias`, `fallback` to webpack configuration(See [config-overrides.js](config-overrides.js)).
 
