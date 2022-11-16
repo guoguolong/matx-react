@@ -5,7 +5,8 @@
 - Add TypeScript support
 - Replace redux with recoil (On going)
 - Upgrade to webpack 5
-- Upgarde to react 18
+- Upgrade to react 18
+- Upgrade to MUI 5.10+
 - Replace react-scripts with react-app-rewired
 
 ## Upgrading log
@@ -28,7 +29,7 @@
 - replace `shortid` with `nanoid`
 - upgrade `axios` to 1.x
 
-## unsupported properties of MUI
+## Commented unsupported properties with MUI 5.10+
 
 - Box.sx
 - TextField.rowsMax
