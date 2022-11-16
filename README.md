@@ -1,6 +1,6 @@
 <h1>Forked from <a href="https://github.com/uilibrary/matx-react">uilibrary/matx-react</a></h1>
 
-## Improvment - Compared with `main` branch
+## Improvment - Compared with `master` branch
 
 - Based on vitejs to build.
 
