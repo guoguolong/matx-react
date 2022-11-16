@@ -1,13 +1,13 @@
 <h1>Forked from <a href="https://github.com/uilibrary/matx-react">uilibrary/matx-react</a></h1>
 
-## Improvment
+## Improvments
 
 - Add TypeScript support
-- Replace redux with recoil (On going)
+- Replace `redux` with `recoil` (On going)
 - Upgrade to webpack 5
 - Upgrade to react 18
 - Upgrade to MUI 5.10+
-- Replace react-scripts with react-app-rewired
+- Replace `react-scripts` with `react-app-rewired`
 
 ## Upgrading log
 
