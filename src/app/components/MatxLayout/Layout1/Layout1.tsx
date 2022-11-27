@@ -34,7 +34,7 @@ const StyledScrollBar = styled(Scrollbar)(() => ({
   flexDirection: 'column',
 }));
 
-const LayoutContainer: any = styled(Box)(({ width, secondarySidebar }: any) => ({
+const LayoutContainer: any = styled(Box)(({ width, secondary_sidebar }: any) => ({
   height: '100vh',
   display: 'flex',
   flexGrow: '1',
@@ -44,7 +44,7 @@ const LayoutContainer: any = styled(Box)(({ width, secondarySidebar }: any) => (
   position: 'relative',
   overflow: 'hidden',
   transition: 'all 0.3s ease',
-  marginRight: secondarySidebar.open ? 50 : 0,
+  marginRight: secondary_sidebar.open ? 50 : 0,
 }));
 
 const Layout1 = () => {
@@ -93,7 +93,7 @@ const Layout1 = () => {
         </SidenavTheme>
       )}
 
-      <LayoutContainer width={sidenavWidth} secondarySidebar={secondarySidebar}>
+      <LayoutContainer width={sidenavWidth} secondary_sidebar={secondarySidebar}>
         {layout1Settings.topbar.show && layout1Settings.topbar.fixed && (
           <ThemeProvider theme={topbarTheme}>
             {/* @ts-ignore */}

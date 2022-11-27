@@ -15,7 +15,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/prop-types": "^15.7.5",
     "autosuggest-highlight": "^3.3.4",
-    "axios": "0.27.2",
+    "axios": "^0.27.2",
     "babel-polyfill": "^6.26.0",
     "clsx": "^1.2.1",
     "cross-fetch": "^3.1.5",
