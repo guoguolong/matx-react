@@ -12,11 +12,11 @@ import { Span } from '../../Typography';
 import NotificationBar from '../../NotificationBar/NotificationBar';
 import ShoppingCart from '../../ShoppingCart';
 
-const StyledIconButton = styled(IconButton)(({ theme }) => ({
+const StyledIconButton = styled(IconButton)(({ theme }: any) => ({
   color: theme.palette.text.primary,
 }));
 
-const TopbarRoot = styled('div')(({ theme }) => ({
+const TopbarRoot = styled('div')(({ theme }: any) => ({
   top: 0,
   zIndex: 96,
   transition: 'all 0.3s ease',
@@ -24,7 +24,7 @@ const TopbarRoot = styled('div')(({ theme }) => ({
   height: topBarHeight,
 }));
 
-const TopbarContainer = styled(Box)(({ theme }) => ({
+const TopbarContainer = styled(Box)(({ theme }: any) => ({
   padding: '8px',
   paddingLeft: 18,
   paddingRight: 20,
@@ -52,7 +52,7 @@ const UserMenu = styled(Box)(() => ({
   '& span': { margin: '0 8px' },
 }));
 
-const StyledItem = styled(MenuItem)(({ theme }) => ({
+const StyledItem = styled(MenuItem)(({ theme }: any) => ({
   display: 'flex',
   alignItems: 'center',
   minWidth: 185,
@@ -65,7 +65,7 @@ const StyledItem = styled(MenuItem)(({ theme }) => ({
   '& span': { marginRight: '10px', color: theme.palette.text.primary },
 }));
 
-const IconBox = styled('div')(({ theme }) => ({
+const IconBox = styled('div')(({ theme }: any) => ({
   display: 'inherit',
   [theme.breakpoints.down('md')]: { display: 'none !important' },
 }));

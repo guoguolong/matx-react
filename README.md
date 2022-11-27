@@ -8,6 +8,7 @@
 - Upgrade to react 18
 - Upgrade to MUI 5.10+
 - Replace `react-scripts` with `react-app-rewired`
+- Add `pnpm` support
 
 ## Upgrading log
 
