@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useReducer } from 'react';
-import axios from 'axios';
+import axios from '@/axios';
 
 const reducer = (state: any, action: any) => {
   switch (action.type) {
